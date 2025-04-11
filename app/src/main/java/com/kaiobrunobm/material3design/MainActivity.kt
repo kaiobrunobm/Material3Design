@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -19,6 +20,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -45,12 +47,13 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Buttons(modifier: Modifier = Modifier) {
+fun Buttons() {
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
     ) {
         Column(
             verticalArrangement = Arrangement.Center,
@@ -60,11 +63,13 @@ fun Buttons(modifier: Modifier = Modifier) {
             Text(
                 text = "Buttons",
                 fontWeight = FontWeight.Bold,
-                fontSize = 36.sp
+                fontSize = 36.sp,
+                color = MaterialTheme.colorScheme.onBackground
             )
             Text(
                 text = "Google Material Design 3",
-                fontWeight = FontWeight.Light
+                fontWeight = FontWeight.Light,
+                color = MaterialTheme.colorScheme.onBackground
             )
             Column(
                 verticalArrangement = Arrangement.spacedBy(16.dp),
