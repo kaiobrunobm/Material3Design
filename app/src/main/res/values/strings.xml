@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Material3Design</string>
     <string name="title_activity_text_fields_component">TextFieldsComponent</string>
+    <string name="title_activity_selection_components">SelectionComponents</string>
 </resources>

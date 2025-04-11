@@ -49,7 +49,7 @@ class TextFieldsComponent : ComponentActivity() {
 }
 
 @Composable
-fun TextFields () {
+fun TextFields() {
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -91,7 +91,7 @@ fun TextFields () {
 
                 TextField(
                     value = contentTextField,
-                    onValueChange = {contentTextField = it},
+                    onValueChange = { contentTextField = it },
                     label = {
                         Text("Label")
                     },
@@ -105,7 +105,7 @@ fun TextFields () {
 
                 OutlinedTextField(
                     value = contentOutlinedTextField,
-                    onValueChange = {contentOutlinedTextField = it},
+                    onValueChange = { contentOutlinedTextField = it },
                     label = {
                         Text("Label")
                     },

@@ -74,29 +74,24 @@ fun Buttons() {
             Column(
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .padding(top = 40.dp)
+                modifier = Modifier.padding(top = 40.dp)
             ) {
                 Button(
-                    onClick = { println("Hello") }
-                ) {
+                    onClick = { println("Hello") }) {
                     Text(
                         text = "Subscribe"
                     )
                 }
 
                 ElevatedButton(
-                    onClick = { println("Hello") }
-                ) {
+                    onClick = { println("Hello") }) {
                     Icon(
                         imageVector = Icons.Default.Add,
                         contentDescription = "Add to cart icon",
-                        modifier = Modifier
-                            .size(18.dp)
+                        modifier = Modifier.size(18.dp)
                     )
                     Spacer(
-                        modifier = Modifier
-                            .width(8.dp)
+                        modifier = Modifier.width(8.dp)
                     )
                     Text(
                         text = "Add to cart"
@@ -104,24 +99,21 @@ fun Buttons() {
                 }
 
                 FilledTonalButton(
-                    onClick = { println("Hello") }
-                ) {
+                    onClick = { println("Hello") }) {
                     Text(
                         text = "Open in browser"
                     )
                 }
 
                 OutlinedButton(
-                    onClick = { println("Hello") }
-                ) {
+                    onClick = { println("Hello") }) {
                     Text(
                         text = "Back"
                     )
                 }
 
                 TextButton(
-                    onClick = { println("Hello") }
-                ) {
+                    onClick = { println("Hello") }) {
                     Text(
                         text = "Learn more"
                     )
@@ -139,18 +131,15 @@ fun Buttons() {
         ) {
 
             Text(
-                text = "Next component",
-                fontSize = 18.sp
+                text = "Next component", fontSize = 18.sp
             )
             Spacer(
-                modifier = Modifier
-                    .size(8.dp)
+                modifier = Modifier.size(8.dp)
             )
             Icon(
                 Icons.Default.KeyboardArrowUp,
                 contentDescription = "Next component button",
-                modifier = Modifier
-                    .rotate(90f)
+                modifier = Modifier.rotate(90f)
             )
         }
     }
