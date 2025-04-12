@@ -18,6 +18,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -25,36 +26,50 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.kaiobrunobm.material3design.ui.theme.Material3DesignTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity() : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        var darkMode by mutableStateOf(false)
+
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Material3DesignTheme {
-                Buttons()
+            Material3DesignTheme (darkTheme = darkMode) {
+                Navigation(
+                    value = darkMode,
+                    onValueChange = { newValue ->  // pass callback function to child Composable
+                        darkMode = !darkMode
+                    })
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Buttons() {
+fun Buttons(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+
     ) {
+
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -123,8 +138,9 @@ fun Buttons() {
 
         }
         Button(
-            onClick = { println("Hello") },
-            modifier = Modifier
+            onClick = {
+                navController.navigate(Screen.TextFieldsScreen.route)
+            }, modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 24.dp, end = 24.dp)
                 .size(60.dp)
@@ -142,14 +158,5 @@ fun Buttons() {
                 modifier = Modifier.rotate(90f)
             )
         }
-    }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun ButtonsPreview() {
-    Material3DesignTheme {
-        Buttons()
     }
 }

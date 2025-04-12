@@ -1,9 +1,5 @@
 package com.kaiobrunobm.material3design
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +13,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
@@ -34,36 +31,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.kaiobrunobm.material3design.ui.theme.Material3DesignTheme
-
-class SelectionComponents : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Material3DesignTheme {
-                Selections()
-            }
-        }
-    }
-}
+import androidx.navigation.NavController
 
 data class ToggleableInfo(
-    val isChecked: Boolean, val text: String
+    val isChecked: Boolean, val text: String = "Unknown"
 )
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Selections() {
+fun Selections(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+
     ) {
+
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -103,8 +90,9 @@ fun Selections() {
 
         //Navigation Button
         Button(
-            onClick = { println("Hello") },
-            modifier = Modifier
+            onClick = {
+                navController.navigate(Screen.TopAppBarScreen.route)
+            }, modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 24.dp, end = 24.dp)
                 .size(60.dp)
@@ -271,13 +259,5 @@ fun RadioButtonComponent() {
                 )
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    Material3DesignTheme {
-        Selections()
     }
 }
