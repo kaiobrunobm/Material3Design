@@ -12,28 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3Design"
         tools:targetApi="31">
-        <activity
-            android:name=".TopAppBarActivity"
-            android:exported="false"
-            android:label="@string/title_activity_top_app_bar"
-            android:theme="@style/Theme.Material3Design">
-        </activity>
-        <activity
-            android:name=".SelectionComponents"
-            android:exported="false"
-            android:label="@string/title_activity_selection_components"
-            android:theme="@style/Theme.Material3Design">
 
-        </activity>
-        <activity
-            android:name=".TextFieldsComponent"
-            android:exported="false"
-            android:label="@string/title_activity_text_fields_component"
-            android:theme="@style/Theme.Material3Design" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Material3Design">
 
             <intent-filter>
