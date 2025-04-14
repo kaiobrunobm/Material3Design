@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.kaiobrunobm.material3design.Menus
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -74,47 +75,114 @@ fun Navigation(value: Boolean, onValueChange: (Boolean) -> Unit) {
 
                 composable(route = Screen.ButtonScreen.route, exitTransition = {
                     slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(1000)
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
                     )
                 }, enterTransition = {
                     slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(800)
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
                     )
                 }) {
                     Buttons(navController = navController)
                 }
                 composable(route = Screen.TextFieldsScreen.route, exitTransition = {
                     slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(1000)
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
                     )
                 }, enterTransition = {
                     slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(800)
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
                     )
                 }) {
                     TextFields(navController = navController)
                 }
                 composable(route = Screen.SelectionScreen.route, exitTransition = {
                     slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(1000)
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
                     )
                 }, enterTransition = {
                     slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(800)
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
                     )
                 }) {
                     Selections(navController = navController)
                 }
                 composable(route = Screen.TopAppBarScreen.route, exitTransition = {
                     slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(1000)
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
                     )
                 }, enterTransition = {
                     slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(800)
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
                     )
                 }) {
-                    TopAppBarComponent()
+                    TopAppBarComponent(navController = navController)
+                }
+                composable(route = Screen.BadgesScreen.route, exitTransition = {
+                    slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
+                    )
+                }, enterTransition = {
+                    slideIntoContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
+                    )
+                }) {
+                    Badges(navController = navController)
+                }
+                composable(route = Screen.BottomAppBar.route, exitTransition = {
+                    slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
+                    )
+                }, enterTransition = {
+                    slideIntoContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
+                    )
+                }) {
+                    BottomAppBar(navController = navController)
+                }
+                composable(route = Screen.Cards.route, exitTransition = {
+                    slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
+                    )
+                }, enterTransition = {
+                    slideIntoContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
+                    )
+                }) {
+                    Cards(navController = navController)
+                }
+                composable(route = Screen.Chips.route, exitTransition = {
+                    slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
+                    )
+                }, enterTransition = {
+                    slideIntoContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
+                    )
+                }) {
+                    Chips(navController = navController)
+                }
+                composable(route = Screen.Dialogs.route, exitTransition = {
+                    slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
+                    )
+                }, enterTransition = {
+                    slideIntoContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
+                    )
+                }) {
+                    Dialogs(navController = navController)
+                }
+
+                composable(route = Screen.Menus.route, exitTransition = {
+                    slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
+                    )
+                }, enterTransition = {
+                    slideIntoContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
+                    )
+                }) {
+                    Menus()
                 }
             }
 

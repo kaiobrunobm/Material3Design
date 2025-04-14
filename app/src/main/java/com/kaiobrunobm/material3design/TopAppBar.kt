@@ -29,11 +29,12 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBarComponent() {
+fun TopAppBarComponent(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -137,7 +138,9 @@ fun TopAppBarComponent() {
 
         }
         Button(
-            onClick = { println("Hello") },
+            onClick = {
+                navController.navigate(Screen.BadgesScreen.route)
+                      },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 24.dp, end = 24.dp)
