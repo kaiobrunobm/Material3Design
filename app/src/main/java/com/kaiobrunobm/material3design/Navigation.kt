@@ -73,116 +73,45 @@ fun Navigation(value: Boolean, onValueChange: (Boolean) -> Unit) {
                 navController = navController, startDestination = Screen.ButtonScreen.route
             ) {
 
-                composable(route = Screen.ButtonScreen.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.ButtonScreen.route) {
                     Buttons(navController = navController)
                 }
-                composable(route = Screen.TextFieldsScreen.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.TextFieldsScreen.route) {
                     TextFields(navController = navController)
                 }
-                composable(route = Screen.SelectionScreen.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.SelectionScreen.route) {
                     Selections(navController = navController)
                 }
-                composable(route = Screen.TopAppBarScreen.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.TopAppBarScreen.route) {
                     TopAppBarComponent(navController = navController)
                 }
-                composable(route = Screen.BadgesScreen.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.BadgesScreen.route) {
                     Badges(navController = navController)
                 }
-                composable(route = Screen.BottomAppBar.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.BottomAppBar.route) {
                     BottomAppBar(navController = navController)
                 }
-                composable(route = Screen.Cards.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.Cards.route) {
                     Cards(navController = navController)
                 }
-                composable(route = Screen.Chips.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.Chips.route) {
                     Chips(navController = navController)
                 }
-                composable(route = Screen.Dialogs.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
+                composable(route = Screen.Dialogs.route) {
                     Dialogs(navController = navController)
                 }
 
-                composable(route = Screen.Menus.route, exitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right, tween(500)
-                    )
-                }, enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left, tween(500)
-                    )
-                }) {
-                    Menus()
+                composable(route = Screen.Menus.route) {
+                    Menus(navController = navController)
+                }
+                composable(route = Screen.NavigationComponents.route) {
+                    NavigationComponents(navController = navController)
+                }
+                composable(route = Screen.ProgressIndicators.route) {
+                    ProgressIndicators(navController = navController)
+                }
+                composable(route = Screen.BottomSheets.route) {
+                    BottomSheets()
                 }
             }
 

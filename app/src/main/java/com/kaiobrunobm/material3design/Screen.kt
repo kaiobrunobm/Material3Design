@@ -11,4 +11,8 @@ sealed class Screen(val route: String) {
     object Chips : Screen(route = "chips")
     object Dialogs : Screen(route = "dialogs")
     object Menus : Screen(route = "menus")
+    object NavigationComponents : Screen(route = "navigation_components")
+    object ProgressIndicators : Screen(route = "progress_indicators")
+    object BottomSheets : Screen(route = "bottom_sheets")
+
 }
